@@ -1,11 +1,11 @@
 import React from "react"
 
 const Pizza = (props) => {
-  let { pizza, cbEditPizza } = props;
+  let { pizza, handleEditButton } = props;
   
-  const cb = (event) =>  
+  const cb = (pizza) =>  
   {
-    cbEditPizza(event)
+    handleEditButton(pizza)
   } 
 
   return(
@@ -13,7 +13,7 @@ const Pizza = (props) => {
       <td>{pizza.topping}</td>
       <td>{pizza.size}</td>
       <td>{(pizza.vegetarian? 'Yes' : 'No')}</td>
-      <td><button type="button" className="btn btn-primary" onClick={(event=>{cb(event)})}>Edit Pizza</button></td>
+      <td><button type="button" className="btn btn-primary" onClick={(()=>{cb(pizza)})}>Edit Pizza</button></td>
     </tr>
   )
 }

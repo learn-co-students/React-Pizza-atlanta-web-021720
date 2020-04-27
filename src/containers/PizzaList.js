@@ -10,7 +10,7 @@ class PizzaList extends Component {
 
         pizza => {
           // debugger
-          return <Pizza pizza = {pizza} cbEditPizza = {this.props.cbEditPizza}/>
+          return <Pizza key = {pizza.id} pizza = {pizza} handleEditButton = {this.props.handleEditButton}/>
         } 
 
        ) 
